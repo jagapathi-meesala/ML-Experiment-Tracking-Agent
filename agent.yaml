@@ -8,9 +8,9 @@ skills:
   - metric-analysis
   - artifact-registration
 tools:
-  - create_experiment.py
-  - log_run.py
-  - compare_runs.py
-  - calculate_metrics.py
-  - register_artifact.py
-  - summarize_experiment.py
+  - create-experiment
+  - log-run
+  - compare-runs
+  - calculate-metrics
+  - register-artifact
+  - summarize-experiment
