@@ -1,0 +1,28 @@
+name: create-experiment
+description: Create a validated machine-learning experiment record.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    name:
+      type: string
+      description: Experiment name.
+    description:
+      type: string
+      description: Optional experiment description.
+    tags:
+      type: array
+      items:
+        type: string
+      description: Optional experiment tags.
+  required: [name]
+output_schema:
+  type: object
+implementation:
+  type: script
+  path: create_experiment.py
+  runtime: python3
+  timeout: 30
+annotations:
+  read_only: false
+  requires_confirmation: false

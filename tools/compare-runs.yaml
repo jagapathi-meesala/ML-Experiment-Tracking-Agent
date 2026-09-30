@@ -1,0 +1,23 @@
+name: compare-runs
+description: Compare metrics across two or more machine-learning runs.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    runs:
+      type: array
+      description: Run objects containing metric dictionaries.
+    metric:
+      type: string
+      description: Optional metric to compare.
+  required: [runs]
+output_schema:
+  type: object
+implementation:
+  type: script
+  path: compare_runs.py
+  runtime: python3
+  timeout: 30
+annotations:
+  read_only: true
+  requires_confirmation: false

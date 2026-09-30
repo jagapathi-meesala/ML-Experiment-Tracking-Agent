@@ -1,0 +1,29 @@
+name: log-run
+description: Record a machine-learning model run with parameters and numeric metrics.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    experiment_id:
+      type: string
+      description: Identifier of the experiment.
+    run_name:
+      type: string
+      description: Human-readable run name.
+    parameters:
+      type: object
+      description: Model or training parameters.
+    metrics:
+      type: object
+      description: Numeric evaluation metrics keyed by metric name.
+  required: [experiment_id, run_name]
+output_schema:
+  type: object
+implementation:
+  type: script
+  path: log_run.py
+  runtime: python3
+  timeout: 30
+annotations:
+  read_only: false
+  requires_confirmation: false
